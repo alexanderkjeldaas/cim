@@ -63,7 +63,7 @@ double __rtgetreal (__txtvp t)
   skipblanke;
   if (!more)
     __rerror ("Getreal: Can't find any real item");
-  if (sign = fortegn)
+  if ((sign = fortegn))
     i++;
   if (sign == -1)
     cs[csi++] = '-';
@@ -103,7 +103,7 @@ double __rtgetreal (__txtvp t)
       skipblanke;
       if (!more)
 	__rerror ("Getreal: Can't find any real item");
-      if (sign = fortegn)
+      if ((sign = fortegn))
 	i++;
       if (csi >= __RTPUTTEXTLENGTH)
 	goto texttolong;
