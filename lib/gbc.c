@@ -41,7 +41,7 @@
  * Dessuten kalles den ogs} fra add_to_pointers i det tilfellet 
  * at poolen blir flyttet */
 
-static do_for_stack_pointers (void (*doit) ())
+static void do_for_stack_pointers (void (*doit) ())
 {
   int i,
     ar,
