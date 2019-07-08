@@ -919,7 +919,7 @@ ARGUMENT_LIST   :       EXPRESSION              { mout(MENDSEP);
 /******************************************************************************
                                                                 YYERROR      */
 
-/* Oppdages feil så blir denne procedyren kalt */
+/* Oppdages feil blir denne procedyren kalt */
 
 void yyerror (char s[])
   {
