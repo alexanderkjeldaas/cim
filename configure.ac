@@ -16,7 +16,7 @@ dnl You should have received a copy of the GNU General Public License
 dnl along with this program; if not, write to the Free Software
 dnl Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
 
-AC_INIT(cim, 5.1)
+AC_INIT([cim],[5.1])
 AC_CONFIG_SRCDIR([src/cimcomp.c])
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -32,7 +32,7 @@ AC_DEFINE_UNQUOTED(OS_TYPE,"`echo $target_os_x_version | tr a-z A-Z`", "Define o
 
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
-AM_PROG_LIBTOOL
+LT_INIT
 
 dnl Library version
 dnl
@@ -85,7 +85,18 @@ AC_CHECK_SIZEOF(int, 4)
 AC_CHECK_SIZEOF(long, 4)
 
 AC_C_BIGENDIAN
-AC_TYPE_SIGNAL
+AC_DIAGNOSE([obsolete],[your code may safely assume C89 semantics that RETSIGTYPE is void.
+Remove this warning and the `AC_CACHE_CHECK' when you adjust the code.])dnl
+AC_CACHE_CHECK([return type of signal handlers],[ac_cv_type_signal],[AC_COMPILE_IFELSE(
+[AC_LANG_PROGRAM([#include <sys/types.h>
+#include <signal.h>
+],
+		 [return *(signal (0, 0)) (0) == 1;])],
+		   [ac_cv_type_signal=int],
+		   [ac_cv_type_signal=void])])
+AC_DEFINE_UNQUOTED([RETSIGTYPE],[$ac_cv_type_signal],[Define as the return type of signal handlers
+		    (`int' or `void').])
+
 CIM_TRAP
 CIM_BINARY_FILE
 CIM_DEFAULTS
