@@ -24,6 +24,7 @@
 #include "extspec.h"
 #include "mapline.h"
 #include "name.h"
+#include "gen.h"
 
 static short plevnull;		/* Hvis en blokks prefiksniv} er 0 s} er 
 				 * plevnull=TRUE.Brukes for } initsialisere
@@ -294,7 +295,7 @@ static void specifier_structure (block_t *rb);
 /******************************************************************************
                                                         BLOCKSTRUCTURE       */
 
-static blockstructure (block_t *rb)
+static void blockstructure (block_t *rb)
 {
   int i;
   decl_t *rd;

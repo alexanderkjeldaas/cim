@@ -27,6 +27,7 @@
 #include "cimcomp.h"
 #include "extspec.h"
 #include "name.h"
+#include "error.h"
 
 #if STDC_HEADERS || HAVE_STRING_H
 #include <string.h>
@@ -565,7 +566,7 @@ static void write_text_mif (FILE *f, unsigned char *s)
 /******************************************************************************
                                                               WRITE_DECL_MIF */
 
-static write_decl_mif (FILE *f, decl_t *rd, int level)
+static void write_decl_mif (FILE *f, decl_t *rd, int level)
 {
   if (rd->kind == KBLOKK || rd->kind == KPRBLK || rd->kind == KFOR || 
       rd->kind == KINSP) return;
@@ -842,7 +843,7 @@ static void write_all_mif (void)
 /******************************************************************************
                                                               WRITE_DECL_EXT */
 
-static write_decl_ext (FILE *f, decl_t *rd)
+static void write_decl_ext (FILE *f, decl_t *rd)
 {
   if (rd->kind == KBLOKK || rd->kind == KPRBLK || rd->kind == KFOR || 
       rd->kind == KINSP) ;

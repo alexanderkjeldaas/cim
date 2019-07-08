@@ -230,7 +230,7 @@ static void sametype (exp_t **rel, exp_t **rer)
 /******************************************************************************
                                                                ARGUMENTERROR */
 
-static argumenterror (int melding, exp_t *re)
+static void argumenterror (int melding, exp_t *re)
 {
   int i = 1;
   if (TYPE == TERROR)
