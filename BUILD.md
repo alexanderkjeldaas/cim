@@ -5,7 +5,7 @@ $ aclocal
 $ autoconf
 $ automake --add-missing
 $ autoreconf
-$ ./configure
+$ CFLAGS="-fms-extensions" ./configure
 $ make
 ```
 
