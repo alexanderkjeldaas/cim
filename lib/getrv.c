@@ -83,4 +83,5 @@ char __rgetrv (__refnamepar *p, long as, int ret, void (*mret) ())
       return (__FALSE);
     }
   /* NOTREACHED */
+  __builtin_unreachable();
 }

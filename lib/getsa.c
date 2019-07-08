@@ -37,7 +37,7 @@
  * ar, av, at -> henholdsvis antall referanse, value og text-variable
  *               som ligger p} rt-stakkene.
  * ret, mret -> Returadressen
- * Returnerer: Adressen i er og __ev (også hvis en thunk kalles) */
+ * Returnerer: Adressen i er og __ev (ogsï¿½ hvis en thunk kalles) */
 
 char __rgetsa (__simplenamepar *p, long as, int ret, void (*mret) ())
 {
@@ -70,4 +70,5 @@ char __rgetsa (__simplenamepar *p, long as, int ret, void (*mret) ())
       return (__FALSE);
     }
   /* NOTREACHED */
+  __builtin_unreachable();
 }

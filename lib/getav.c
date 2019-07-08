@@ -96,4 +96,5 @@ char __rgetav (char ftype, __aritnamepar *p, long as, int ret, void (*mret) ())
       return (__FALSE);
     }
   /* NOTREACHED */
+  __builtin_unreachable();
 }

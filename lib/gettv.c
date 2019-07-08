@@ -75,4 +75,5 @@ char __rgettv (__textnamepar *p, long as, int ret, void (*mret))
       return (__FALSE);
     }
   /* NOTREACHED */
+  __builtin_unreachable();
 }
