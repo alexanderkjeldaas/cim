@@ -5,7 +5,7 @@ $ aclocal
 $ autoconf
 $ automake --add-missing
 $ autoreconf
-$ CFLAGS="-fms-extensions" ./configure
+$ CFLAGS="-fms-extensions -Wno-microsoft-anon-tag" ./configure
 $ make
 ```
 
